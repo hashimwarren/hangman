@@ -32,8 +32,17 @@ Person.prototype.setName = function (fullName) {
 }
 
 const me = new Person('Hashim', 'Warren', 40, ['teaching, biking'])
+
+me.getBio = function () {
+    return 'This is fake'
+
+}
+
 me.setName('Darique Warren')
 console.log(me.getBio())
 
 const person2 = new Person('Alexandra', 'Houston', 38)
+
+
+
 console.log(person2.getBio()) // expected: "Alexandra is 38". Printed error: "Cannot read property 'forEach' of undefined"
