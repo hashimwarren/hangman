@@ -1,10 +1,43 @@
+
+
 const Hangman = function (word, guesses) {
-    this.word = word
+    this.word = word.toLowerCase().split('')
     this.guesses = guesses
+    this.guessedLetters = ['a', 'h']
 
 }
 
-const gameOne = new Hangman('cat', 3)
-const gameTwo = new Hangman('bird', 4)
 
-console.log(gameOne, gameTwo);
+Hangman.prototype.getPuzzle = function () {
+
+    let puzzle = ''
+
+    this.word.forEach((letter) => {
+        if (this.guessedLetters.includes(letter) || letter === ' ') {
+            puzzle += letter
+
+        } else {
+            puzzle += '*'
+
+        }
+
+    })
+
+
+
+    return puzzle
+
+
+
+}
+
+
+const gameOne = new Hangman('Cat', 2)
+const gameTwo = new Hangman('Hashim Warren', 4)
+
+
+
+
+//console.table([gameOne, gameTwo]);
+console.log(gameOne.getPuzzle())
+console.log(gameTwo.getPuzzle())
