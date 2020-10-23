@@ -1,5 +1,3 @@
-
-
 const Hangman = function (word, guesses) {
     this.word = word.toLowerCase().split('')
     this.guesses = guesses
@@ -23,7 +21,7 @@ Hangman.prototype.getPuzzle = function () {
 
     })
 
-    return puzzle + " " + this.guesses
+    return puzzle
 
 }
 
@@ -42,15 +40,3 @@ Hangman.prototype.makeGuess = function (guess) {
 
 
 }
-
-const gameOne = new Hangman('Cat', 2)
-console.log(gameOne.getPuzzle())
-console.log(gameOne.guesses);
-
-window.addEventListener('keypress', function (e) {
-    const guess = e.key
-    gameOne.makeGuess(guess)
-    console.log(gameOne.getPuzzle())
-    console.log(gameOne.guesses);
-
-})
