@@ -2,7 +2,7 @@ const puzzleEl = document.querySelector('#puzzle')
 const guessesEl = document.querySelector('#guesses')
 
 
-const gameOne = new Hangman('Cat', 2)
+const gameOne = new Hangman('Madison and Moses', 10)
 console.log(gameOne.getPuzzle())
 console.log(gameOne.guesses);
 
