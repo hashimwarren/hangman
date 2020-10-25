@@ -34,6 +34,7 @@ class Hangman {
 
             if (badGuess && uniqueGuess) {
                 this.guesses--
+                beep(999, 220, 300)
 
             }
 
@@ -54,12 +55,18 @@ class Hangman {
 
         if (this.guesses <= 0) {
             this.status = 'failed'
+            beep(100, 520, 200)
 
         } else if (finished) {
             this.status = 'finished'
+            beep(999, 210, 800)
+            beep(999, 500, 800)
+
 
         } else {
             this.status = 'playing'
+            beep(999, 210, 200)
+
         }
     }
     printStatus() {
