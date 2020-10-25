@@ -2,7 +2,7 @@ const puzzleEl = document.querySelector('#puzzle')
 const guessesEl = document.querySelector('#guesses')
 
 
-const gameOne = new Hangman('cat', 2)
+const gameOne = new Hangman('Welcome home Alexandra Joye Warren', 10)
 console.log(gameOne.getPuzzle())
 console.log(gameOne.guesses);
 

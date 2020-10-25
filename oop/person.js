@@ -25,9 +25,11 @@ class Person {
 
 }
 
+class Employee extends Person {
 
+}
 
-const person = new Person('Alexandra', 'Houston', 38, ['Teaching'])
+const person = new Employee('Alexandra', 'Houston', 38, ['Teaching'])
 const person2 = new Person('Clancy', 'Martin', 55)
 
 
