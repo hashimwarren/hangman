@@ -26,13 +26,38 @@ class Person {
 }
 
 class Employee extends Person {
+    constructor(firstName, lastName, age, position, likes) {
+        super(firstName, lastName, age, likes)
+        this.position = position
+
+
+    }
+    getBio() {
+        return `${this.firstName} ${this.lastName} is a ${this.position}`
+    }
+    getYearsLeft() {
+        return 65 - this.age
+    }
 
 }
 
-const person = new Employee('Alexandra', 'Houston', 38, ['Teaching'])
-const person2 = new Person('Clancy', 'Martin', 55)
+class Student extends Person {
+    constructor(firstName, lastName, age, likes, grade) {
+        super(firstName, lastName, age, likes)
+        this.grade = grade
+    }
+    updateGrade(number) {
+        this.grade += number
 
+    }
+    getBio() {
+        let status = this.grade >= 70 ? 'passing' : 'failing'
+        return `${this.firstName} is ${status} the class`
+    }
+}
 
+const student = new Student('Hashim', 'Warren', 40, ['Reading', 'Writing'], 71)
 
-console.log(person.getBio()) //?
-console.log(person2.getBio()); //?
+console.log(student.getBio());
+student.updateGrade(-10)
+console.log(student.getBio());
